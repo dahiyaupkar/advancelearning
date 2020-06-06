@@ -17,10 +17,10 @@ public:
 
 int main()
 {
-	Rectangle* r1 = new Rectangle();
-	r1->length = 4;
-	r1->breadth = 10;
-	cout << "Area of rectangle is : " << r1->area() << endl;
-	cout << "Perimeter of rectangle is : " << r1->perimeter() << endl;
+	Rectangle r1;
+	r1.length;
+	r1.breadth;
+	cout << "Area of rectangle is : " << r1.area() << endl;
+	cout << "Perimeter of rectangle is : " << r1.perimeter() << endl;
 	return 0;
 }
