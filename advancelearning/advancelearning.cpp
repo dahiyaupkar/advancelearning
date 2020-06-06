@@ -2,10 +2,15 @@
 using namespace std;
 class Rectangle
 {
-private:
 	int length;
 	int breadth;
 public:
+	//Constructor
+	Rectangle(int l=0,int b=0)
+	{
+		setLength(l);		//Why I call the setLength and setBreadth function: 
+		setBreadth(b);		//Reason: By default, I am passing Length and Breadth as a zero value to avoid mishandling of data.
+	}
 	//Mutator
 	void setLength(int l)
 	{
@@ -37,9 +42,7 @@ public:
 
 int main()
 {
-	Rectangle r1;
-	r1.setLength(10);
-	r1.setBreadth(20);
+	Rectangle r1(25,10);
 	cout << "Area of rectangle is : " << r1.area() << endl;
 	cout << "Perimeter of rectangle is : " << r1.perimeter() << endl;
 	return 0;
