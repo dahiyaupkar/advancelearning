@@ -12,7 +12,7 @@ public:
 	int getLength();
 	int getBreadth();
 	int area();
-	int perimeter();
+	inline int perimeter(); // This is the another way to make inline funcation(Just add inline Key in front of the funcation definition).
 	~Rectangle();
 };
 //Constructor
@@ -49,7 +49,7 @@ int Rectangle::area()
 {
 	return length * breadth;
 }
-int Rectangle::perimeter()
+int Rectangle::perimeter()  
 {
 	return 2 * (length + breadth);
 }
