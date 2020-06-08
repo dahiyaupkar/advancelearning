@@ -80,14 +80,23 @@ public:
 		real = r;
 		img = i;
 	}
-	friend Complex operator+(Complex c1, Complex c2); // In this, I use friend function.(Remember the example, third person is doing your sum of two numbers. )
+	friend Complex operator+(Complex c1, Complex c2); // In this, I use friend function.(Remember the example, third person is doing your sum of two numbers. )\
+
+	friend ostream&  operator <<(ostream& o, Complex &x);
 };
+
 Complex operator+(Complex c1, Complex c2) //In this you don't need to use scope resolution. It's a same function implemented below and It's another method of overloading operator.
 {
 	Complex temp;
 	temp.real = c1.real + c2.real;
 	temp.img = c1.img + c2.img;
 	return temp;
+}
+
+ ostream& operator<< (ostream& o, Complex &x)		//Insertion Operator Overloading
+{
+	o << x.real << "+i" << x.img << endl;
+	return o;
 }
 
 int main()
@@ -97,4 +106,6 @@ int main()
 	Complex c3;
 	c3 = c1 + c2;
 	cout << c3.real << "+i" << c3.img << endl;
+
+	cout << c3;			//Insertion Operator Overloading
 }
