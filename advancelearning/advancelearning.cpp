@@ -80,14 +80,15 @@ public:
 		real = r;
 		img = i;
 	}
-	Complex operator+(Complex x)
-	{
-		Complex temp;
-		temp.real = real + x.real;
-		temp.img = img + x.img;
-		return temp;
-	}
+	friend Complex operator+(Complex c1, Complex c2); // In this, I use friend function.(Remember the example, third person is doing your sum of two numbers. )
 };
+Complex operator+(Complex c1, Complex c2) //In this you don't need to use scope resolution. It's a same function implemented below and It's another method of overloading operator.
+{
+	Complex temp;
+	temp.real = c1.real + c2.real;
+	temp.img = c1.img + c2.img;
+	return temp;
+}
 
 int main()
 {
